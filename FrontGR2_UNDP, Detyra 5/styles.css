@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f3f5f9;
+}
+
+.side_nav {
+    display: flex;
+    position: relative;
+}
+
+.side_nav .sidebar {
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(40, 39, 39);
+}
+
+.side_nav .sidebar .logo {
+    margin-bottom: 200px;
+    width: 300px;
+    height: 120px;
+}
+
+.side_nav .sidebar ul li {
+    padding: 5px;
+    text-align: center;
+}
+
+.side_nav .sidebar ul li a {
+    color: white;
+    display: block;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.side_nav .sidebar ul li:hover {
+    background-color: rgb(77, 75, 75);
+}
+
+.side_nav .sidebar .social_media {
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+    display: flex;
+}
+
+
+.side_nav .content {
+    width: 100%;
+    margin-left: 300px;
+}
+
+.side_nav .content .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid rgb(168, 166, 168);
+    margin: 0 5px;
+    text-align: center;
+}
+
+.content-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 20px;
+}
+
+.foto1 {
+    position: relative;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.foto2 {
+    position: relative;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 100px;
+    left: 0px;
+    width: 100%;
+    background-color: rgb(37, 36, 36);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.foto1 img {
+    width: 750px;
+    height: 350px;
+}
+
+.foto2 img {
+    width: 373px;
+    height: 350px;
+}
+
+
