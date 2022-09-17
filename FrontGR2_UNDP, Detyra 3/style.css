@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    align-items: center;
+    background-color: #231F1E;
+    padding: 10px;
+}
+
+.link {
+    text-align: center;
+}
+
+.link a {
+    text-decoration: none;
+    font-size: 50px;
+    color: white;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    padding: 0;
+}
+
+.link img {
+    margin-right: 10px;
+}
+
+.table-container {
+    margin: 25px auto;
+}
+
+
+.foto1 {
+    width: 800px;
+    height: 400px;
+}
+
+.foto2 {
+    width: 400px;
+    height: 400px;
+}
+
+/* lists.html*/
+.content {
+    border: 1px solid #F2D6D0;
+    width: 400px;
+    height: 400px;
+    padding-top: 20px;
+    padding-right: 5px;
+    box-sizing: border-box;
+} 
+
+.list-grid {
+    border-bottom: 3px solid rgb(233, 105, 105);
+}
+
+.grid-links {
+    border-bottom: 3px solid rgb(233, 105, 105);
+}
