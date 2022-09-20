@@ -1,0 +1,89 @@
+.out {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .dot { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    outline: 4px solid white;
+  }
+  
+  /* Border radius circle green color*/
+  .green {
+    background-color: #46B5A0;
+  }
+
+  /* Border radius circle orange color*/
+  .orange {
+    background-color: rgb(216, 122, 0);
+  }
+
+  .dot > p{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: rgb(88, 88, 88);
+  }
+
+  .color-pack {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-right: 100px;
+  }
+
+  .color-pack > h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(61, 61, 61);
+    margin-top: 40px;
+  }
+
+  .color-pack > p {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(61, 61, 61);
+    margin-bottom: 5px;
+  }
+  
+.color-pack > button {
+    border-radius: 30px 0;
+    border: none;
+    width: 130px;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 100px;
+}
+
+/* Button green color */
+#green-btn {
+    background-color: #46B5A0;
+    color: rgb(63, 63, 63);
+}
+
+/* Button orange color */
+#orange-btn {
+    background-color: rgb(216, 122, 0);
+    color: rgb(226, 225, 225);
+}
