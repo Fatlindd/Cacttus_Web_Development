@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.bk-orange {
+    background-color: rgb(224, 139, 89);
+    width: 600px;
+    height: 100vh;
+    position: relative;
+}
+
+.bk-orange > img {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    border: 10px solid white;
+    box-shadow: 0px 0px 9px 0px rgba(130,130,130,0.72);
+}
+
+.description {
+   position: absolute; 
+   max-width: 500px;
+   height: 200px;
+   top: 40%;
+   right: 1%;
+   transform: translate(-50%, -50%);
+}
+
+.btn {
+    background-color: rgb(224, 139, 89);
+    border: none;
+    color: white;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    box-shadow: 0px 0px 9px 0px rgba(130,130,130,0.72);
+}
+
+.description > h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+.description > h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.description > p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+/* Section 2 */
+
+.section-services {
+    height: 100vh;
+    background-color: #F5F3DA;
+}
+
+.services-desc > h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 60px;
+}
+
+.services-desc > p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin: 0 350px;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(80, 80, 80);
+    margin-bottom: 50px;
+}
+
+.box-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box {
+    display: block;
+    width: 300px;
+    padding: 40px 30px;
+    background-color: #FCFBF6;
+    margin-right: 30px;
+    box-shadow: -8px 10px 19px -10px rgba(117,116,117,1);
+}
+
+.box > h1  {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #474747;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.box > p  {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #474747;
+    margin: 0;
+}
+
+.box-row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.box-row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
