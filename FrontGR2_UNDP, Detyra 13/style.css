@@ -1,0 +1,30 @@
+body {
+    background: #F4F4F4;
+}
+
+.flip {
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    background-color: #212529;
+    border-bottom: solid 1px #FCE4E4;
+    color: white;
+}
+
+.flip > img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    cursor: pointer;
+}
+
+.panel {
+    padding: 50px;
+    display: none;
+    text-align: center;
+    background-color: #F4F4F4;
+    border: solid 1px #212529;
+    color: black;
+    }

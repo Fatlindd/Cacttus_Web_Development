@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Slide Toggle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <div class="container mt-3">
+        
+        <div class="form-group mb-3">
+            <label>Num of flips: </label>
+            <input type="number" class="form-control my-2" id="numOfFlips" placeholder="Give the number...">
+            <button class="btn btn-dark">Generate</button>
+        </div>
+
+        <div id="setflips">
+
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+
+            $(document).ready(function(){
+                $(".btn").click(function(){
+                    let flipsNum = $("#numOfFlips").val();
+                    generateItems(flipsNum);
+              });
+              
+              // Sepse btn_plus po bohet replace me minus.png dhe diqka te tille dokumenti nuk e njeh
+              // Sepse eventi .btn.click ekzekutohet kur bohet loaded faqja me rastin e klikimi te butonit generate
+              // dhe pastaj ne kemi tentu prap nje event tjeter i cili nderron fotot qe faktikisht nuk ruhen en memorie per mi mbajt mend
+                $(document).on("click",".btn_plus", function(){
+                    let currentId = $(this).attr("id").split("_")[1];
+                    slideToggle(currentId);
+                });
+              
+            });
+
+            function slideToggle(currentid) {
+                let countSameClass = $(".flip").length;
+
+                for (let index = 1; index <= countSameClass; index++) {
+                    if (currentid == index) {
+                        if($(`#btn_${index}`).attr("src") === "img/plus.png"){
+                            $(`#btn_${index}`).attr("src", "img/minus.png");
+                            $(`#panel${currentid}`).slideToggle();
+                        } else {
+                            $(`#btn_${index}`).attr("src", "img/plus.png");
+                            $(`#panel${currentid}`).slideToggle();
+                        }
+                    }
+                    else {
+                        $(`#btn_${index}`).attr("src", "img/plus.png");
+                        $(`#panel${index}`).slideUp();
+                    }
+                }
+            }
+
+         function generateItems(nr_flips) {
+                var createHtml = '';
+                for (let index = 1; index <= nr_flips; index++) {
+                    createHtml += `
+                    <div class="flip">
+                        <span class="h5">Lektion ${index}</span>
+                        <img src="img/plus.png" id="btn_${index}" class="btn_plus">
+                    </div>
+                    <div id="panel${index}" class="panel">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius nesciunt alias odio, facere nulla, eos mollitia 
+                        iusto sunt cum earum veniam distinctio officiis cumque animi et nemo laboriosam commodi!
+                    </div>
+                    `;
+                }
+                $("#setflips").html(createHtml);
+            }
+           
+        </script>
+    </div> 
+</body>
+</html>
