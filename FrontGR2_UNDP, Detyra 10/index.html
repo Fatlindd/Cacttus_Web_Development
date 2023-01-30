@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Invoice</title>
+</head>
+<body>
+    
+    <div class="container mt-3">
+        <p class="h1">INVOICE</p>
+
+        <!-- Info By Me -->
+        <div class="mt-5">
+            <p>You name/nusiness name</p>
+            <p>Your address</p>
+            <p>Your phone number</p>
+            <p>Your email</p>
+        </div>
+
+        <!-- Info By Client -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <p><b>Bill to:</b></p>
+                <p>Buyer name/business name</p>
+                <p>Buyer address</p>
+                <p>Buyer phone number</p>
+                <p>Buyer email</p>
+            </div>
+
+            <div class="col-md-6">
+                <p><b>Invoice number: </b>######</p>
+                <p><b>Invoice date: </b>MM/DD/YY</p>
+                <p><b>Payment due: </b>MM/DD/YY</p>
+            </div>
+        </div>
+
+    <script>
+
+        const items = [
+                ['Item1', 3, 2],
+                ['Item2', 5, 1.5],
+                ['Item3', 7, 3],
+                ['Item4', 2, 5],
+        ];
+
+        let amount = 0;
+        let subtotal = 0;
+
+        document.write(`<table class="table mt-5">`)
+        document.write(`<tr class="bg-secondary text-white"><th>Item</th><th>Quantity</th><th>Price per unit</th><th>Amount</th></tr>`)
+        
+        for(let row = 0; row < items.length; row++){
+            document.write(`<tr>`);
+            
+            amount = (items[row][1] * items[row][2]);
+            items[row].push(amount);
+            subtotal += amount;
+            
+            for(let col = 0; col < items[row].length; col++){
+               document.write(`<td>${items[row][col]}</td>`)
+            }
+            document.write(`</tr>`);
+        }
+        document.write(`</table>`);
+
+        document.write(`
+            <div class="row">
+                <div class="col-10"><h5 class="d-flex justify-content-end">Subtotal</h5></div>
+                <div class="col-2"><p>${subtotal.toFixed(2)}€</p></div>
+            </div>
+
+            <div class="row">
+                <div class="col-10"><h5 class="d-flex justify-content-end">Tax(15%)</h5></div>
+                <div class="col-2"><p>${(subtotal * 0.15).toFixed(2)}%</p></div>
+            </div>
+
+            <div class="row">
+                <div class="col-10"><h5 class="d-flex justify-content-end">Total</h5></div>
+                <div class="col-2"><p>${(subtotal * 1.18).toFixed(2)}€</p></div>
+            </div>
+        `);
+    </script>
+
+    
+</div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
