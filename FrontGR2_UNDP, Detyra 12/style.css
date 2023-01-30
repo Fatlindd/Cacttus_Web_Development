@@ -1,0 +1,21 @@
+.raport-header {
+    background-color: rgb(2, 102, 216);
+    color: white;
+    padding: 10px;
+}
+
+.raport-footer{
+    background-color: rgb(247, 247, 247);
+    max-height: 500px;
+    border: 1px solid rgb(201, 201, 201);
+    overflow-y: scroll;
+    z-index: 0;
+}
+
+.position_avg {
+    padding: 7px;
+    position: sticky;
+    bottom: 0;
+    border-top: 1px solid rgb(193, 193, 193);
+    z-index: 1;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Student | Average Grade</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Emri i studentit: </label>
+                        <input type="text" id="std_name" class="form-control">
+                    </div>
+                </div>
+        
+                <div class="row mt-2">
+                    <label>Numri i lendeve: </label>
+                </div>
+                <div class="row d-flex flex-column">
+                    <div class="col-md-12">        
+                        <input type="text" class="form-control mb-2" id="num_row">
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-between">
+                        <button type="button" class="btn btn-primary w-100" onclick="addRow()">Shto</button>
+                    </div>
+                </div>
+                
+              
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Lenda</th>
+                                    <th>Nota</th>
+                                </tr>
+                            </thead>
+        
+                            <tbody id="addSubject">
+        
+                            </tbody>
+                        </table>
+
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-primary" onclick="createRaport()">Krijo raportin</button>
+                            <button type="button" class="btn btn-primary" onclick="bigGrade()">Nota me e madhe</button>
+                        </div>
+                        
+                    </div>
+            </div>
+        </div>
+
+        <!-- Tabela per vizualizimin e te dhenave per note mesatare -->
+        <div class="col-md-7 mt-4">
+            <div class="raport-header">
+                <p class="h4 m-0">Raporti notes mesatare për: <span id="name_of_std" class="text-warning"></span></p>
+                 </div>
+                    <div class="raport-footer position_tabel" id="infoSubject">
+                        <table class="table">
+                            <thead>
+                                <th class="text-secondary">Lendet:</th>
+                                <th class="text-secondary">Notat:</th>
+                            </thead>
+                            <tbody id="raport_views">
+
+                            </tbody>
+                        </table>
+
+                        <div class="position_avg bg-light d-flex w-100">
+                            <div class="w-50">
+                                <h6 class="ms-2 text-secondary">Nota mesatare: <span id="avg_calc"></span></h6>
+                            </div>
+
+                            <div class="w-50">
+                                <h6 class="ms-2 text-secondary">Nota me e madhe: <span id="big_grade"></span></h6>
+                            </div>
+                            
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Parts of JavaScript -->
+
+    <script>
+
+        /* Funksioni qe shton inputa varesisht nga numri i lendeve qe ka te perfunduara studenti */
+        function addRow(){
+            let num_of_rows = document.getElementById('num_row').value;
+            let name_of_std = document.getElementById('std_name').value;
+            console.log(num_of_rows == '');
+
+            if(num_of_rows != '' && name_of_std != ''){
+                    
+            createRow = '';
+            for(let index = 0; index < num_of_rows; index++) {
+                
+                    createRow += `<tr class="num_rows">
+                    <td><input type="text" placeholder="Subject name..." id = "subject_${index}"></td>
+                    <td><input type="number" class="w-50" min="6" max="10" id = "grade_${index}"></td>
+                    </tr>`;
+        
+                document.getElementById('addSubject').innerHTML = createRow;
+                }
+                } else {
+                alert('Fusha emri i studentit dhe numri i lendeve duhet te plotesohen!');     
+            }
+        }
+
+        /* Funksioni qe llogarit noten mesatare te studentit */
+        function averageCalculate(){
+            let num_of_grades = document.getElementsByClassName('num_rows').length;
+
+            let sum = 0;
+            for(let s = 0; s < num_of_grades; s++){
+                let grade = Number.parseInt(document.getElementById(`grade_${s}`).value);
+                sum += grade;
+            }
+
+            let avg = (sum / num_of_grades);
+            
+            if(!isNaN(avg)){
+                document.getElementById('avg_calc').innerText = avg.toFixed(2);
+            }
+        }
+
+        /* Funksioni qe gjeneron te dhenat ne tabelen Raporti notes mesatare */
+        function createRaport(){
+            let num_of_rows = document.getElementsByClassName('num_rows').length;
+            let student_name = document.getElementById('std_name').value;
+
+            let createRows = '';
+            for (let rows = 0; rows < num_of_rows; rows++){
+                let subject = document.getElementById(`subject_${rows}`).value;
+                let grade = document.getElementById(`grade_${rows}`).value;
+
+                console.log(subject);
+
+                if(subject != '' && grade != ''){
+                    createRows += `<tr>
+                    <td>${subject}</td>
+                    <td>${grade}</td>
+                    </tr>`;
+                } else {
+                    alert('Fushat Lenda dhe nota duhet plotesuar!');
+                    return;
+                }
+            }
+
+            document.getElementById('raport_views').innerHTML = createRows;
+            document.getElementById('name_of_std').innerText = student_name;
+
+            averageCalculate();
+        }
+
+        /* Funksioni qe gjeneron noten me te madhe te studentit */
+        function bigGrade(){
+            let num_of_rows = document.getElementsByClassName('num_rows').length;
+            
+            const all_grades = [];
+            for(let index = 0; index < num_of_rows; index++){
+                var grade = Number.parseInt(document.getElementById(`grade_${index}`).value);
+                console.log('grade: ' + grade);
+                all_grades.push(grade);
+            }
+
+            all_grades.sort(function(a,b){return b - a});
+            
+            if(all_grades.length === 0 || Number.isNaN(grade)){
+                document.getElementById('big_grade').innerText = 'Nuk ka ende nota!';
+            } else {
+                document.getElementById('big_grade').innerText = all_grades[0];
+            }
+        }
+        
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
