@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Forms in Bootstrap</title>
+</head>
+<body style="background-color: #edeef0">
+    
+    <div class="container-fluid mt-4">
+        <p class="h1">Employment Application Form Example</p>
+        <form>
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <label for="" class="form-label">Firs tName *</label>
+                    <input type="text" class="form-control" placeholder="Your firstname...">
+                </div>
+                <div class="col-md-3">
+                    <label for="" class="form-label">Last Name *</label>
+                    <input type="text" class="form-control" placeholder="Your lastname...">
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <label for="" class="form-label">Email *</label>
+                    <input type="email" class="form-control" placeholder="name@example.com">
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="" class="form-label">Portfolio website</label>
+                    <input type="url" class="form-control" value="https://">
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="" class="form-label">Position you are applying for *</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="" class="form-label">Salary requirements</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label for="" class="form-label">When can you start?</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="" class="form-label">Phone *</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label for="" class="form-label">Fax</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="" class="form-label">Are you willing to relocate?</label>
+                <div class="col-md-4">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="choose" value="Yes" checked>Yes
+                    </div>
+                    
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="choose" value="No">No
+                    </div>
+                   
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="choose" value="Not Sure">Not Sure
+                    </div> 
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="" class="form-label">Last company you worked for</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="comment" class="form-label">Reference /Comments /Questions</label>
+                    <textarea class="form-control" rows="6" id="comment" name="text"></textarea>
+                    </div>
+                </div>
+            
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <button type="submit" class="btn btn-primary mt-4">Send Application</button>
+                </div>
+
+                <div class="col-md-3 d-flex align-items-center mt-4">
+                    <a href="#" class="link-primary h4">forms</a>
+                </div>
+            </div>
+                
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
