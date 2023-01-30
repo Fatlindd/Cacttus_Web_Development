@@ -1,0 +1,65 @@
+[{
+    "name":"Gresa", 
+    "lastname":"Berisha", 
+    "age":29,
+    "job": "Doctor",
+    "city":"Prizren",
+    "img": "img/doctor_girl.webp"
+}, 
+{
+    "name":"Fatjona", 
+    "lastname":"Thaci", 
+    "age":28,
+    "job": "Doctor",
+    "city":"Prishtinë",
+    "img": "img/doctor_girl.png"
+},
+{
+    "name":"Bleron", 
+    "lastname":"Bytyçi", 
+    "age":25,
+    "job": "Designer",
+    "city":"Pejë",
+    "img": "img/designer.webp"
+},
+{
+    "name":"Fatjon", 
+    "lastname":"Gashi", 
+    "age":26,
+    "job": "FrontEnd Developer",
+    "city":"Pejë",
+    "img": "img/front-end.webp"
+}, 
+{
+    "name":"Erblina", 
+    "lastname":"Haxhijaj", 
+    "age":24,
+    "job": "Teknologe",
+    "city":"Istog",
+    "img": "img/food-technology.webp"
+},
+{
+    "name":"Eriola", 
+    "lastname":"Thaci", 
+    "age":29,
+    "job": "BackEnd Developer",
+    "city":"Ferizaj",
+    "img": "img/backend.webp"
+},
+{
+    "name":"Bleart", 
+    "lastname":"Hoxha", 
+    "age":28,
+    "job": "Polic",
+    "city":"Podujev",
+    "img": "img/police.png"
+},
+{
+    "name":"Nora", 
+    "lastname":"Krasniqi", 
+    "age":30,
+    "job": "Gazetare",
+    "city":"Gjilan",
+    "img": "img/journalist.png"
+}
+]
