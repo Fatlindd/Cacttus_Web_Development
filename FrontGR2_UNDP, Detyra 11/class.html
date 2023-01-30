@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Lista Rezultateve</title>
+</head>
+<body>
+    
+    <div class="container mt-4">
+    <script>
+        
+        const lista_rezultateve = [
+                ['Prishtina', 'Llapi', 1, 2, 4],
+                ['Trepca', 'Peja', 1, 1, 3],
+                ['F.Kosova', 'Drita', 2, 3, 1],
+                ['Ballkani', 'Ferizaji', 3, 3, 2],
+                ['Drenica', 'Dukagjini', 2, 1, 5],
+                ['Real Madrid', 'Barcelona', 1, 5, 4],
+        ];
+
+        document.write(`<table class="table table-striped">`);
+        document.write(`<thead class="bg-dark text-white text-center"><tr><th>Ekipa 1</th><th>Ekipa 2</th><th>Java</th><th>Gola_ekipa_1</th><th>Gola_ekipa_2</th></tr></thead>`);
+        for(let row = 0; row < lista_rezultateve.length; row++){
+            document.write(`<tr class="text-center">`);
+            for(let col = 0; col < lista_rezultateve[row].length; col++){
+                document.write(`<td>${lista_rezultateve[row][col]}</td>`);
+            }
+            document.write(`</tr>`);
+        }
+        document.write(`</table>`);
+        
+        let unique_number_goals = [];
+        for(let index = 0; index < lista_rezultateve.length; index++){
+            if (unique_number_goals.includes(lista_rezultateve[index][4])){
+                continue;
+            }else {
+                unique_number_goals.push(lista_rezultateve[index][4]);
+           } 
+        }
+        unique_number_goals.sort(function(a, b){return b - a});
+        document.write(unique_number_goals);
+
+        /* Gjenerimi i vargjeve te dyfishta */
+        let ekipet = [];
+            for(let i = 0; i < lista_rezultateve.length; i++){
+                ekipet.push([]);
+            }
+
+        
+
+
+        /* Gjenerimi i tabeles se re me me se shumti gola */
+        document.write(`<table class="table table-striped mt-5">`);
+        document.write(`<thead class="bg-primary text-white text-center"><tr><th>Team Name</th><th>Weak</th><th>Goals</th></tr></thead>`);
+        for(let n = 0; n < ekipet.length; n++){
+            document.write(`<tr class="text-center">`);
+            for(let m = 0; m < ekipet[n].length; m++){
+                document.write(`<td>${ekipet[n][m]}</td>`);
+            }
+            document.write(`</tr>`);
+        }
+        document.write(`</table>`);
+
+    </script>
+ </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
